@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="login-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="login-title">Sign In</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="bg-light-orange">
+  <div class="login-container">
+    
+    <!-- Maikling Pagbati -->
+    <div class="welcome-text">
+      <h2>Welcome Back!</h2>
+      <p>Piliin ang iyong gustong paraan para mag-sign in sa Salo Kusina.</p>
+    </div>
+
+    <!-- Mga Pindutan para sa Social at Mobile Logins -->
+    <div class="social-buttons">
+      
+      <!-- Google Button -->
+      <ion-button expand="block" class="google-btn">
+        <ion-icon slot="start" name="logo-google"></ion-icon>
+        Continue with Google
+      </ion-button>
+
+      <!-- Facebook Button -->
+      <ion-button expand="block" class="facebook-btn">
+        <ion-icon slot="start" name="logo-facebook"></ion-icon>
+        Continue with Facebook
+      </ion-button>
+
+      <!-- Divider Text -->
+      <div class="divider">
+        <span>OR</span>
+      </div>
+
+      <!-- Mobile Number Button -->
+      <ion-button expand="block" fill="outline" class="mobile-btn">
+        <ion-icon slot="start" name="call-outline"></ion-icon>
+        Use Mobile Number
+      </ion-button>
+
+    </div>
+
+    <!-- Link papuntang Sign Up -->
+    <div class="login-footer">
+      <p>Wala pang account? <a href="/register">Sign Up na!</a></p>
+    </div>
+
+  </div>
+</ion-content>

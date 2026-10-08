@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="register-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="register-title">Create Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="bg-light-orange">
+  <div class="register-container">
+    
+    <div class="welcome-text">
+      <h2>Magsimula Ka Dito!</h2>
+      <p>Gumawa ng account para ma-enjoy ang mga tampok na lutuin sa Salo Kusina.</p>
+    </div>
+
+    <!-- Registration Form Inputs na may [(ngModel)] para makuha ang tinatayp -->
+    <div class="register-form">
+      <ion-item lines="none" class="custom-input-item">
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-input type="text" placeholder="Full Name" [(ngModel)]="fullName"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="custom-input-item">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <ion-input type="email" placeholder="Email Address" [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="custom-input-item">
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="custom-input-item">
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-input type="password" placeholder="Confirm Password" [(ngModel)]="confirmPassword"></ion-input>
+      </ion-item>
+
+      <!-- Pindutan na tatawag sa onRegister() function natin kapag kinlik -->
+      <ion-button expand="block" class="signup-submit-btn" (click)="onRegister()">
+        REGISTER
+      </ion-button>
+    </div>
+
+    <div class="register-footer">
+      <p>May account ka na ba? <a href="/login">Sign In dito.</a></p>
+    </div>
+
+  </div>
+</ion-content>

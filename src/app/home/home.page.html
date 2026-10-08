@@ -1,0 +1,36 @@
+<ion-content [fullscreen]="true" class="welcome-bg">
+  <div class="welcome-container">
+    
+    <!-- Logo at Pangalan Area -->
+    <div class="logo-section">
+      <div class="logo-circle">
+        <ion-icon name="restaurant"></ion-icon>
+      </div>
+      <h1 class="app-title">Salo Kusina</h1>
+      <p class="app-subtitle">Lasap ng Tahanan, Kahit Saan</p>
+    </div>
+
+    <!-- Pagbati / Kataga -->
+    <div class="intro-section">
+      <h2>Gutom ka na ba?</h2>
+      <p>Tumuklas at magluto ng mga paboritong pagkaing Pilipino. Sumali sa aming komunidad ngayon!</p>
+    </div>
+     <!-- Mga Pindutan para sa Walang Account -->
+    <div class="action-buttons">
+      <ion-button expand="block" class="signin-btn" [routerLink]="['/login']">
+        SIGN IN
+      </ion-button>
+      
+      <ion-button expand="block" fill="outline" class="signup-btn" [routerLink]="['/register']">
+        CREATE AN ACCOUNT
+      </ion-button>
+    </div>
+
+
+    <!-- Pwede ring icon o footer design sa ibaba -->
+    <div class="welcome-footer">
+      <p>By continuing, you agree to our Terms & Conditions</p>
+    </div>
+
+  </div>
+</ion-content>

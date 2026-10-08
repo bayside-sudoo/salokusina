@@ -1,0 +1,89 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar class="main-toolbar">
+    <ion-title class="app-title">Salo Kusina</ion-title>
+    
+    <!-- Profile Icon sa Kanang Bahagi sa Itaas -->
+    <ion-buttons slot="end">
+      <ion-avatar class="top-profile-avatar" id="menu-profile-trigger">
+        <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="Profile" />
+      </ion-avatar>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Popover Box para sa Logout -->
+<ion-popover trigger="menu-profile-trigger" dismissOnSelect="true">
+  <ng-template>
+    <ion-content class="popover-content">
+      <ion-list lines="none">
+        <ion-item button class="logout-item" (click)="onLogout()">
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          <ion-label>Logout</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-popover>
+
+<ion-content [fullscreen]="true" class="bg-white">
+
+  <!-- Search Bar (Lilitaw lang kung may nakaload na o para makapaghahanap sila) -->
+  @if (allRecipes.length > 0) {
+    <div class="search-bar-container">
+      <ion-searchbar 
+        placeholder="Maghanap ng ulam o sangkap..." 
+        (ionInput)="handleSearch($event)"
+        mode="ios">
+      </ion-searchbar>
+    </div>
+  }
+  
+  <!-- Conditional Rendering: Empty State o Listahan ng Ulam -->
+  @if (allRecipes.length === 0) {
+    <div class="empty-state-container">
+      <div class="empty-icon-box">
+        <ion-icon name="restaurant-outline"></ion-icon>
+      </div>
+      <h3>Wala pang mga ulam</h3>
+      <p>Kasalukuyang inaayos ang ating kusina at mga putahe. Abangan ang mga masasarap na lutuin dito sa lalong madaling panahon!</p>
+    </div>
+  } @else {
+    <div class="recipe-list-container">
+      @if (publishedRecipes.length === 0) {
+        <p class="no-result-text">Walang nakitang ulam na tumutugma sa iyong hinahanap.</p>
+      } @else {
+        @for (recipe of publishedRecipes; track recipe.id) {
+          <div class="recipe-card">
+            <h3>{{ recipe.title }}</h3>
+            <span class="recipe-category">{{ recipe.description }}</span>
+            <p>{{ recipe.content }}</p>
+          </div>
+        }
+      }
+    </div>
+  }
+
+</ion-content>
+
+<!-- Bottom Navigation Tabs -->
+<ion-footer class="ion-no-border">
+  <ion-tab-bar slot="bottom" class="custom-tab-bar">
+    <ion-tab-button tab="home" class="active-tab">
+      <ion-icon name="home"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="search">
+      <ion-icon name="search-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="library">
+      <ion-icon name="book-outline"></ion-icon>
+    </ion-tab-button>
+  <!-- Siguraduhing ganito na ang nakalagay sa menu.page.html -->
+<ion-tab-button tab="write" [routerLink]="['/recipe-setup']">
+  <ion-icon name="pencil-outline"></ion-icon>
+</ion-tab-button>
+    <ion-tab-button tab="notifications">
+      <ion-icon name="notifications-outline"></ion-icon>
+      <ion-badge color="danger" class="tab-badge">3</ion-badge>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

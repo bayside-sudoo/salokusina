@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="setup-toolbar">
+    <ion-title class="setup-title">Setup Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="bg-light-orange">
+  <div class="setup-container">
+    
+    <div class="welcome-text">
+      <h2>Ibahagi ang Iyong Detalye</h2>
+      <p>Kunti na lang at handa ka nang tumuklas ng mga masasarap na ulam!</p>
+    </div>
+
+    <!-- Profile Picture Area -->
+    <div class="avatar-section">
+      <div class="avatar-placeholder">
+        <ion-icon name="camera-outline"></ion-icon>
+      </div>
+      <!-- Ipinapakita ang Display Name mula sa nakaraang Register Screen -->
+      <h3 class="display-name">{{ displayName }}</h3>
+      <p class="avatar-sub">Maglagay ng Profile Picture</p>
+    </div>
+
+    <!-- Wattpad-Style Account Information Form -->
+    <div class="setup-form">
+      
+      <!-- Custom Username Input with fixed '@' prefix -->
+      <ion-item lines="none" class="custom-input-item">
+        <span class="username-prefix">@</span>
+        <ion-input type="text" placeholder="username" [(ngModel)]="username" class="username-field"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="custom-input-item">
+        <ion-icon name="call-outline" slot="start"></ion-icon>
+        <ion-input type="tel" placeholder="Mobile Number" [(ngModel)]="phoneNumber"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="custom-input-item">
+        <ion-icon name="calendar-outline" slot="start"></ion-icon>
+        <ion-input type="date" placeholder="Birthday" [(ngModel)]="birthday"></ion-input>
+      </ion-item>
+
+      <!-- Save & Continue Button -->
+      <ion-button expand="block" class="setup-submit-btn" (click)="onSaveSetup()">
+        SAVE & CONTINUE
+      </ion-button>
+    </div>
+
+  </div>
+</ion-content>

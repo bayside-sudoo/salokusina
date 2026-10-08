@@ -1,0 +1,88 @@
+.register-toolbar {
+  --background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.register-title {
+  font-weight: bold;
+  color: #1a0e05;
+}
+
+.bg-light-orange {
+  --background: #fff3e8;
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 30px 24px;
+}
+
+.welcome-text {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1a0e05;
+    margin-bottom: 6px;
+  }
+  p {
+    font-size: 14px;
+    color: #665c54;
+    line-height: 1.4;
+  }
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+// Rounded custom input container styles
+.custom-input-item {
+  --background: #ffffff;
+  --border-radius: 12px;
+  --padding-start: 16px;
+  margin-bottom: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  
+  ion-icon {
+    color: #f48240;
+    margin-right: 12px;
+  }
+  
+  ion-input {
+    --placeholder-color: #a69a92;
+    color: #1a0e05;
+  }
+}
+
+.signup-submit-btn {
+  --background: #f48240;
+  --color: #ffffff;
+  --border-radius: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  height: 54px;
+  margin-top: 10px;
+  --box-shadow: 0 4px 12px rgba(244, 130, 64, 0.3);
+}
+
+.register-footer {
+  text-align: center;
+  font-size: 14px;
+  color: #665c54;
+  margin-top: 20px;
+  
+  a {
+    color: #f48240;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
